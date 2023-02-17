@@ -6,7 +6,7 @@ import SingleSong from "./SingleSong"
 const Songs = () => {
     const dispatch = useDispatch()
     const allSongs = useSelector((state) => state.songs.results)
-    const favourites = useSelector((state) => state.favourites.songs)
+    const favourites = useSelector((state) => state.favourites.present.songs)
 
     useEffect(() => {
         dispatch(fetchSongsAction("queen"))

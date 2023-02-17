@@ -519,3 +519,22 @@ h5.card-title {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(176, 175, 175);
 }
+
+.undo-button {
+  background-color: #1ED764 !important;
+  border-color: #1ED764 !important;
+  margin-bottom: 20px;
+}
+
+.undo-button:hover {
+  background-color: #16a548 !important;
+}
+
+.undo-button:active {
+  border-color: #1FDF64 !important;
+}
+
+.undo-button:focus {
+  box-shadow: none !important;
+  border-color: #1ED764 !important;
+}

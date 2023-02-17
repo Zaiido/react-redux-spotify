@@ -1,4 +1,5 @@
 import { ADD_TITLE, REMOVE_TITLE } from "../actions";
+import undoable from "redux-undo";
 
 const initialState = {
     titles: []
@@ -22,4 +23,7 @@ const favouriteTitlesReducer = (state = initialState, action) => {
             return state
     }
 }
-export default favouriteTitlesReducer
+
+const undoableTitlesReducer = undoable(favouriteTitlesReducer)
+
+export default undoableTitlesReducer

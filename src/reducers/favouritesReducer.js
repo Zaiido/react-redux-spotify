@@ -1,3 +1,4 @@
+import undoable from "redux-undo";
 import { ADD_TO_FAVOURITES, REMOVE_FROM_FAVOURITES } from "../actions";
 
 const initialState = {
@@ -25,4 +26,6 @@ const favouritesReducer = (state = initialState, action) => {
 
 }
 
-export default favouritesReducer
+const undoableFavouritesReducer = undoable(favouritesReducer)
+
+export default undoableFavouritesReducer

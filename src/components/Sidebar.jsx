@@ -3,6 +3,7 @@ import { FormControl, Form } from "react-bootstrap"
 import { HeartFill } from "react-bootstrap-icons"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchSongsAction } from "../actions"
+import UndoButton from "./UndoButton"
 
 const Sidebar = () => {
 
@@ -10,7 +11,7 @@ const Sidebar = () => {
 
     const dispatch = useDispatch()
 
-    const favouriteSongs = useSelector((state) => state.favouriteTitles.titles)
+    const favouriteSongs = useSelector((state) => state.favouriteTitles.present.titles)
 
     const [query, setQuery] = useState("")
 
@@ -91,6 +92,7 @@ const Sidebar = () => {
                 </li>
             </ul>
             <hr />
+            <UndoButton />
             <ul id="navbar-playlist">
                 {favouriteSongs && favouriteSongs.map((song) => {
                     return (<li className="mt-1 truncate2" style={{ cursor: "pointer" }}>{song}</li>)
