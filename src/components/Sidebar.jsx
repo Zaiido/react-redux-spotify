@@ -94,8 +94,10 @@ const Sidebar = () => {
             <hr />
             <UndoButton />
             <ul id="navbar-playlist">
-                {favouriteSongs && favouriteSongs.map((song) => {
-                    return (<li className="mt-1 truncate2" style={{ cursor: "pointer" }}>{song}</li>)
+                {favouriteSongs && favouriteSongs.map((song, i) => {
+                    return (
+                        <li key={i} className="mt-1 truncate2" style={{ cursor: "pointer" }}>{song}</li>
+                    )
                 })}
             </ul>
             <div className="nav-item mb-5 pb-4" style={{ cursor: 'pointer', marginTop: 'auto' }}>
