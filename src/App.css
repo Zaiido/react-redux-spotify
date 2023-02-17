@@ -523,7 +523,8 @@ h5.card-title {
 .undo-button {
   background-color: #1ED764 !important;
   border-color: #1ED764 !important;
-  margin-bottom: 20px;
+  margin: 0 15px 20px;
+
 }
 
 .undo-button:hover {
