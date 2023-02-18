@@ -1,8 +1,8 @@
 import { Heart, HeartFill } from "react-bootstrap-icons"
 import { useDispatch } from "react-redux"
-import { addTitle, addToFavouritesAction, musicPlayerAction, removeFromFavouritesAction, removeTitle } from "../actions"
+import { addToFavouritesAction, musicPlayerAction, removeFromFavouritesAction } from "../actions"
 
-const SingleSong = ({ song, favourite, i }) => {
+const SingleSong = ({ song, favourite }) => {
 
     const dispatch = useDispatch()
 
@@ -26,12 +26,10 @@ const SingleSong = ({ song, favourite, i }) => {
                     {favourite ?
                         <HeartFill className="favourite-icon green" onClick={(e) => {
                             dispatch(removeFromFavouritesAction(song.id))
-                            dispatch(removeTitle(song.title))
                         }} />
                         :
                         <Heart className="favourite-icon" onClick={(e) => {
-                            dispatch(addToFavouritesAction(song.id))
-                            dispatch(addTitle(song.title))
+                            dispatch(addToFavouritesAction(song))
                         }
 
 

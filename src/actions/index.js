@@ -2,8 +2,7 @@ export const GET_SONGS = "GET_SONGS"
 export const ADD_TO_FAVOURITES = "ADD_TO_FAVOURITES"
 export const REMOVE_FROM_FAVOURITES = "REMOVE_FROM_FAVOURITES"
 export const ADD_TO_PLAYER = "ADD_TO_PLAYER"
-export const ADD_TITLE = "ADD_TITLE"
-export const REMOVE_TITLE = "REMOVE_TITLE"
+
 
 
 export const fetchSongsAction = (query) => {
@@ -26,10 +25,10 @@ export const fetchSongsAction = (query) => {
 }
 
 
-export const addToFavouritesAction = (id) => {
+export const addToFavouritesAction = (song) => {
     return {
         type: ADD_TO_FAVOURITES,
-        payload: id
+        payload: song
     }
 }
 
@@ -40,20 +39,6 @@ export const removeFromFavouritesAction = (id) => {
     }
 }
 
-
-export const addTitle = (title) => {
-    return {
-        type: ADD_TITLE,
-        payload: title
-    }
-}
-
-export const removeTitle = (title) => {
-    return {
-        type: REMOVE_TITLE,
-        payload: title
-    }
-}
 
 export const musicPlayerAction = (song) => {
     return {

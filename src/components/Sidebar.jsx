@@ -11,7 +11,7 @@ const Sidebar = () => {
 
     const dispatch = useDispatch()
 
-    const favouriteSongs = useSelector((state) => state.favouriteTitles.present.titles)
+    const favouriteSongs = useSelector((state) => state.favourites.present.songs)
 
     const [query, setQuery] = useState("")
 
@@ -96,7 +96,7 @@ const Sidebar = () => {
             <ul id="navbar-playlist">
                 {favouriteSongs && favouriteSongs.map((song, i) => {
                     return (
-                        <li key={i} className="mt-1 truncate2" style={{ cursor: "pointer" }}>{song}</li>
+                        <li key={i} className="mt-1 truncate2" style={{ cursor: "pointer" }}>{song.title}</li>
                     )
                 })}
             </ul>

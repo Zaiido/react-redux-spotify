@@ -25,8 +25,8 @@ const Songs = () => {
                     <span className="ml-auto">SEE ALL</span>
                 </div>
                 <Row>
-                    {allSongs.map((song) => (
-                        favourites.includes(song.id) ? <SingleSong key={song.id} song={song} favourite={true} /> : <SingleSong key={song.id} song={song} favourite={false} />
+                    {allSongs.map((song, i) => (
+                        favourites.some((favSong) => favSong.id === song.id) ? <SingleSong key={song.id} song={song} favourite={true} /> : <SingleSong key={song.id} song={song} favourite={false} />
                     ))}
                 </Row>
             </div>
